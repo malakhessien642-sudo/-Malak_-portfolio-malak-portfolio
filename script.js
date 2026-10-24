@@ -1,65 +1,103 @@
 
-const langToggle = document.getElementById("langToggle");
-const menuToggle = document.getElementById("menuToggle");
-const nav = document.getElementById("nav");
-const backToTop = document.getElementById("backToTop");
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+  const languageToggle = document.getElementById("languageToggle");
+  const backToTop = document.getElementById("backToTop");
+  const currentYear = document.getElementById("currentYear");
 
-let currentLang = "en";
+  let currentLanguage = "en";
 
-function setLanguage(lang) {
-  currentLang = lang;
+  if (currentYear) {
+    currentYear.textContent = new Date().getFullYear();
+  }
 
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+  // Mobile navigation
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
 
-  document.querySelectorAll("[data-en][data-ar]").forEach(function (element) {
-    const translation = element.dataset[lang];
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
 
-    if (translation !== undefined) {
-      element.innerHTML = translation;
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        menuToggle.textContent = "☰";
+      });
+    });
+  }
+
+  // English / Arabic language toggle
+  if (languageToggle) {
+    languageToggle.addEventListener("click", function () {
+      currentLanguage = currentLanguage === "en" ? "ar" : "en";
+
+      document.documentElement.lang = currentLanguage;
+      document.documentElement.dir =
+        currentLanguage === "ar" ? "rtl" : "ltr";
+
+      document.body.dir =
+        currentLanguage === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-en][data-ar]").forEach(function (element) {
+        element.textContent = element.getAttribute(
+          currentLanguage === "ar" ? "data-ar" : "data-en"
+        );
+      });
+
+      languageToggle.textContent =
+        currentLanguage === "ar" ? "English" : "عربي";
+    });
+  }
+
+  // Back to top button
+  function updateBackToTop() {
+    if (backToTop) {
+      backToTop.classList.toggle("visible", window.scrollY > 400);
     }
-  });
+  }
 
-  langToggle.textContent = lang === "en" ? "عربي" : "English";
-  document.title = lang === "en"
-    ? "Malak Hussein | Developer Portfolio"
-    : "ملك حسين | معرض أعمالي";
+  window.addEventListener("scroll", updateBackToTop);
+  updateBackToTop();
 
-  document.querySelector('meta[name="description"]').content =
-    lang === "en"
-      ? "Malak Hussein's developer portfolio, projects, skills and contact information."
-      : "معرض أعمال ملك حسين، ومشاريعها ومهاراتها وطرق التواصل معها.";
-}
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
 
-langToggle.addEventListener("click", function () {
-  setLanguage(currentLang === "en" ? "ar" : "en");
-});
+  // Friendly fallback if a project image is missing
+  document.querySelectorAll(".project-image").forEach(function (image) {
+    image.addEventListener("error", function () {
+      image.style.display = "none";
+      const imageLink = image.closest(".project-image-link");
 
-menuToggle.addEventListener("click", function () {
-  const isOpen = nav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(isOpen));
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-});
+      if (imageLink) {
+        imageLink.style.minHeight = "180px";
+        imageLink.style.display = "grid";
+        imageLink.style.placeItems = "center";
+        imageLink.style.color = "#A7F3D0";
+        imageLink.style.padding = "20px";
+        imageLink.setAttribute(
+          "aria-label",
+          "Project image not found. Check the image filename."
+        );
 
-nav.querySelectorAll("a").forEach(function (link) {
-  link.addEventListener("click", function () {
-    nav.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.textContent = "☰";
-  });
-});
-
-window.addEventListener("scroll", function () {
-  backToTop.classList.toggle("visible", window.scrollY > 350);
-});
-
-backToTop.addEventListener("click", function () {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+        const fallback = document.createElement("span");
+        fallback.textContent = "Project Preview";
+        imageLink.prepend(fallback);
+      }
+    });
   });
 });
-
-document.getElementById("year").textContent = new Date().getFullYear();
-
-setLanguage("en");
