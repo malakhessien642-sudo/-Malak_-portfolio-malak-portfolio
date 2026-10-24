@@ -664,3 +664,19 @@ body[dir="rtl"] .eyebrow {
     padding: 20px;
   }
 }
+
+.image-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--mint);
+  font-size: 0.9rem;
+  background:
+    radial-gradient(ellipse at center, rgba(16, 185, 129, 0.12), transparent 70%),
+    #202020;
+}
+
+.image-placeholder {
+  padding: 12px;
+  text-align: center;
+}
