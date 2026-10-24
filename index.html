@@ -1,311 +1,336 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0b0b12">
-  <meta name="description" content="Malak Hussein's developer portfolio, projects, skills and contact information.">
-  <title>Malak Hussein | Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#171717">
+  <meta name="description" content="Malak Hussein Elsayed Hussein — Full-Stack Web Developer, Web Designer and AI Enthusiast.">
+  <title>Malak Hussein Elsayed Hussein | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+
   <header class="header">
-    <a href="#home" class="logo">Malak<span>.</span></a>
+    <nav class="navbar container">
+      <a class="logo" href="#home">MALAK<span>.</span></a>
 
-    <nav class="nav" id="nav">
-      <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-      <a href="#about" data-en="About" data-ar="عني">About</a>
-      <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
-      <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
-      <a href="#contact" data-en="Contact" data-ar="تواصل معي">Contact</a>
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+        <a href="#about" data-en="About" data-ar="عني">About</a>
+        <a href="#skills" data-en="Skills" data-ar="المهارات">Skills</a>
+        <a href="#projects" data-en="Projects" data-ar="المشاريع">Projects</a>
+        <a href="#education" data-en="Learning" data-ar="التعلم">Learning</a>
+        <a href="#contact" data-en="Contact" data-ar="تواصل معي">Contact</a>
+        <button class="language-btn" id="languageToggle">عربي</button>
+      </div>
     </nav>
-
-    <div class="header-actions">
-      <button id="langToggle" class="lang-btn" type="button">عربي</button>
-      <button id="menuToggle" class="menu-btn" type="button"
-        aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    </div>
   </header>
 
   <main>
     <section class="hero section" id="home">
-      <div class="hero-content">
-        <p class="eyebrow">
-          <span class="status-dot"></span>
-          <span data-en="WELCOME TO MY PORTFOLIO"
-            data-ar="أهلًا بيكم في معرض أعمالي">WELCOME TO MY PORTFOLIO</span>
-        </p>
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
 
-        <h1>
-          <span data-en="Hi, I'm" data-ar="أهلًا، أنا">Hi, I'm</span>
-          <span class="gradient-text">Malak Hussein</span>
-        </h1>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <span class="eyebrow">
+            <span class="status-dot"></span>
+            <span data-en="WELCOME TO MY PORTFOLIO"
+              data-ar="أهلًا بك في معرض أعمالي">WELCOME TO MY PORTFOLIO</span>
+          </span>
 
-        <h2 data-en="Aspiring Software Developer"
-          data-ar="مُبرمجة طموحة">Aspiring Software Developer</h2>
+          <h1 data-en="Malak Hussein Elsayed Hussein"
+            data-ar="ملك حسين السيد حسين">
+            Malak Hussein Elsayed Hussein
+          </h1>
 
-        <p class="hero-description"
-          data-en="I build modern, responsive websites and enjoy turning ideas into real digital experiences. I'm always learning and growing as a developer."
-          data-ar="بصمم وبطور مواقع ويب عصرية ومتجاوبة، وبحب أحوّل الأفكار لتجارب رقمية حقيقية. دايمًا بتعلم وبطور من نفسي كمبرمجة.">
-          I build modern, responsive websites and enjoy turning ideas into real digital experiences. I'm always learning and growing as a developer.
-        </p>
+          <h2 data-en="Full-Stack Web Developer"
+            data-ar="مطوّرة مواقع Full-Stack">
+            Full-Stack Web Developer
+          </h2>
 
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#projects"
-            data-en="Explore My Projects ↗"
-            data-ar="اكتشف مشاريعي ↗">Explore My Projects ↗</a>
-          <a class="btn btn-outline" href="#contact"
-            data-en="Contact Me" data-ar="تواصل معي">Contact Me</a>
-        </div>
-
-        <div class="social-links">
-          <a href="https://github.com/malakhessien642-sudo"
-            target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/"
-            target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        </div>
-      </div>
-
-      <div class="hero-art" aria-label="Developer illustration">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="code-card">
-          <div class="window-dots"><i></i><i></i><i></i></div>
-          <p class="code-muted">const developer = {</p>
-          <p><span class="code-key">name:</span> <span class="code-string">'Malak'</span>,</p>
-          <p><span class="code-key">passion:</span> <span class="code-string">'Coding'</span>,</p>
-          <p><span class="code-key">learning:</span> <span class="code-string">'Every day'</span></p>
-          <p class="code-muted">};</p>
-          <p class="code-result">Ready to build something great! <span>✦</span></p>
-        </div>
-        <span class="floating-icon icon-code">&lt;/&gt;</span>
-        <span class="floating-icon icon-star">✦</span>
-        <span class="floating-icon icon-brace">{ }</span>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow" data-en="GET TO KNOW ME" data-ar="اتعرف عليا">GET TO KNOW ME</p>
-        <h2 data-en="About <span>Me</span>" data-ar="نبذة <span>عني</span>">About <span>Me</span></h2>
-      </div>
-
-      <div class="about-card">
-        <div class="about-mark">M<span>.</span></div>
-        <div>
-          <h3 data-en="Curious mind. Creative builder."
-            data-ar="عقل فضولي.. وشغف بالإبداع">Curious mind. Creative builder.</h3>
-          <p data-en="I'm Malak Hussein, a Computer Science student interested in software development and web technologies. I enjoy learning by building projects, solving problems, and improving my skills one step at a time."
-            data-ar="أنا ملك حسين، طالبة علوم حاسب، مهتمة بتطوير البرمجيات وتقنيات الويب. بحب أتعلم من خلال تنفيذ المشاريع وحل المشكلات وتطوير مهاراتي خطوة بخطوة.">
-            I'm Malak Hussein, a Computer Science student interested in software development and web technologies. I enjoy learning by building projects, solving problems, and improving my skills one step at a time.
+          <p class="hero-subtitle"
+            data-en="Web Designer · AI Enthusiast"
+            data-ar="مصممة مواقع · مهتمة بالذكاء الاصطناعي">
+            Web Designer · AI Enthusiast
           </p>
-          <p class="muted" data-en="My goal is to keep growing, create useful digital products, and contribute to real-world software projects."
-            data-ar="هدفي إني أستمر في التعلم، وأبني منتجات رقمية مفيدة، وأشارك في مشاريع برمجية حقيقية.">
-            My goal is to keep growing, create useful digital products, and contribute to real-world software projects.
+
+          <p class="hero-description"
+            data-en="I create modern web experiences with thoughtful design and interactive functionality. I'm also exploring Artificial Intelligence and Data Science as part of my learning journey."
+            data-ar="أصمم وأطوّر تجارب ويب عصرية تجمع بين التصميم الجذاب والتفاعل، وأتعلم الذكاء الاصطناعي وعلوم البيانات ضمن رحلتي التعليمية.">
+            I create modern web experiences with thoughtful design and interactive functionality. I'm also exploring Artificial Intelligence and Data Science as part of my learning journey.
           </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects"
+              data-en="Explore My Projects ↗"
+              data-ar="استكشفي مشاريعي ↗">Explore My Projects ↗</a>
+            <a class="btn btn-outline" href="#contact"
+              data-en="Contact Me"
+              data-ar="تواصلي معي">Contact Me</a>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/malakhessien642-sudo"
+              target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <span>·</span>
+            <a href="https://www.linkedin.com/" target="_blank"
+              rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Developer portfolio illustration">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-monogram">M<span>.</span></div>
+          <div class="floating-tag tag-top">{" < /> "}</div>
+          <div class="floating-tag tag-bottom">AI ✦</div>
+          <div class="hero-art-caption">CREATIVE MINDS BUILD GREAT THINGS</div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue">
+        <span></span>
+        <span data-en="SCROLL TO EXPLORE" data-ar="مرري لاكتشاف المزيد">SCROLL TO EXPLORE</span>
+      </a>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="GET TO KNOW ME" data-ar="تعرفي عليّ">GET TO KNOW ME</span>
+          <h2 data-en="About Me" data-ar="نبذة عني">About Me</h2>
+        </div>
+
+        <div class="about-card">
+          <div class="about-symbol">M<span>.</span></div>
+          <div>
+            <h3 data-en="Curious mind. Creative builder."
+              data-ar="عقل فضولي وشغف بالإبداع.">Curious mind. Creative builder.</h3>
+            <p data-en="I'm Malak Hussein Elsayed Hussein, a Computer Science student interested in web development, interface design, and Artificial Intelligence. I enjoy learning through practical projects, solving problems, and turning ideas into useful digital experiences."
+              data-ar="أنا ملك حسين السيد حسين، طالبة في قسم علوم الحاسب، مهتمة بتطوير الويب وتصميم الواجهات والذكاء الاصطناعي. أحب التعلم بالممارسة وتنفيذ المشاريع وحل المشكلات وتحويل الأفكار إلى تجارب رقمية مفيدة.">
+              I'm Malak Hussein Elsayed Hussein, a Computer Science student interested in web development, interface design, and Artificial Intelligence. I enjoy learning through practical projects, solving problems, and turning ideas into useful digital experiences.
+            </p>
+            <p data-en="My goal is to keep developing my skills and build accessible, responsive, and meaningful digital products."
+              data-ar="هدفي هو الاستمرار في تطوير مهاراتي وبناء منتجات رقمية مفيدة ومتجاوبة وسهلة الاستخدام.">
+              My goal is to keep developing my skills and build accessible, responsive, and meaningful digital products.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills">
-      <div class="section-heading">
-        <p class="eyebrow" data-en="WHAT I WORK WITH" data-ar="التقنيات اللي بتعلمها">WHAT I WORK WITH</p>
-        <h2 data-en="My <span>Skills</span>" data-ar="مهاراتي <span>التقنية</span>">My <span>Skills</span></h2>
-      </div>
-
-      <div class="skills-grid">
-        <article class="skill-card">
-          <div class="skill-icon orange">5</div>
-          <h3>HTML5</h3>
-          <p data-en="Semantic page structure" data-ar="بناء هيكل صفحات الويب">Semantic page structure</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon blue">✳</div>
-          <h3>CSS3</h3>
-          <p data-en="Responsive layouts and styling" data-ar="تنسيق المواقع والتصميم المتجاوب">Responsive layouts and styling</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon yellow">JS</div>
-          <h3>JavaScript</h3>
-          <p data-en="Interactive web experiences" data-ar="إضافة التفاعل للمواقع">Interactive web experiences</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon purple">C#</div>
-          <h3>C#</h3>
-          <p data-en="Programming fundamentals" data-ar="أساسيات البرمجة">Programming fundamentals</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon green">GH</div>
-          <h3>GitHub</h3>
-          <p data-en="Version control and deployment" data-ar="إدارة المشاريع ونشر المواقع">Version control and deployment</p>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon pink">⌘</div>
-          <h3 data-en="Problem Solving" data-ar="حل المشكلات">Problem Solving</h3>
-          <p data-en="Logical thinking and practice" data-ar="التفكير المنطقي والتطبيق">Logical thinking and practice</p>
-        </article>
-      </div>
-      <p class="small-note" data-en="Skills shown reflect my current learning journey and will grow with experience."
-        data-ar="المهارات دي بتعبر عن رحلتي الحالية في التعلم، وهطورها مع الخبرة.">
-        Skills shown reflect my current learning journey and will grow with experience.
-      </p>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="section-heading">
-        <p class="eyebrow" data-en="SOME THINGS I'VE BUILT" data-ar="نماذج من شغلي">SOME THINGS I'VE BUILT</p>
-        <h2 data-en="Featured <span>Projects</span>" data-ar="أهم <span>مشاريعي</span>">Featured <span>Projects</span></h2>
-        <p class="section-description"
-          data-en="A selection of my web projects. Explore each live website below."
-          data-ar="مجموعة من مشاريعي في تطوير الويب. تقدري تزوري كل موقع من الروابط دي.">
-          A selection of my web projects. Explore each live website below.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-visual coffee-visual">
-            <span class="visual-symbol">☕</span>
-            <span class="visual-label">COFFEE / HOUSE</span>
-          </div>
-          <div class="project-info">
-            <p class="project-type" data-en="WEB DEVELOPMENT" data-ar="تطوير ويب">WEB DEVELOPMENT</p>
-            <h3>Coffee Shop</h3>
-            <p data-en="A coffee shop website featuring product categories and a welcoming café-inspired design."
-              data-ar="موقع كافيه بتصميم مستوحى من أجواء القهوة وعرض للمنتجات والتصنيفات.">
-              A coffee shop website featuring product categories and a welcoming café-inspired design.
-            </p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a class="project-link" href="https://malakhessien642-sudo.github.io/coffee-shop/"
-              target="_blank" rel="noopener noreferrer">
-              <span data-en="Visit Website" data-ar="زيارة الموقع">Visit Website</span> ↗
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-visual wedding-visual">
-            <span class="visual-symbol">💍</span>
-            <span class="visual-label">جوازة ميري</span>
-          </div>
-          <div class="project-info">
-            <p class="project-type" data-en="ARABIC WEBSITE" data-ar="موقع عربي">ARABIC WEBSITE</p>
-            <h3>جوازة ميري</h3>
-            <p data-en="An Arabic entertainment website inspired by Egyptian wedding humor and everyday married life."
-              data-ar="موقع ترفيهي عربي مستوحى من الكوميديا المصرية ومواقف الحياة الزوجية.">
-              An Arabic entertainment website inspired by Egyptian wedding humor and everyday married life.
-            </p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a class="project-link" href="https://malakhessien642-sudo.github.io/gwaza-mery/"
-              target="_blank" rel="noopener noreferrer">
-              <span data-en="Visit Website" data-ar="زيارة الموقع">Visit Website</span> ↗
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-visual queen-visual">
-            <span class="visual-symbol">♛</span>
-            <span class="visual-label">QUEEN STORE</span>
-          </div>
-          <div class="project-info">
-            <p class="project-type" data-en="E-COMMERCE" data-ar="متجر إلكتروني">E-COMMERCE</p>
-            <h3>Queen Store</h3>
-            <p data-en="An online store concept focused on product presentation and a stylish shopping experience."
-              data-ar="تصميم متجر إلكتروني يركز على عرض المنتجات وتجربة تسوق أنيقة.">
-              An online store concept focused on product presentation and a stylish shopping experience.
-            </p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a class="project-link" href="https://malakhessien642-sudo.github.io/Queen-store-/"
-              target="_blank" rel="noopener noreferrer">
-              <span data-en="Visit Website" data-ar="زيارة الموقع">Visit Website</span> ↗
-            </a>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-visual space-visual">
-            <span class="visual-symbol">🪐</span>
-            <span class="visual-label">BEYOND EARTH</span>
-          </div>
-          <div class="project-info">
-            <p class="project-type" data-en="INTERACTIVE WEB" data-ar="موقع تفاعلي">INTERACTIVE WEB</p>
-            <h3>Beyond Earth</h3>
-            <p data-en="A space-themed website that invites visitors to explore planets through an immersive visual experience."
-              data-ar="موقع عن الفضاء والكواكب يقدم تجربة بصرية لاستكشاف عالم الفلك.">
-              A space-themed website that invites visitors to explore planets through an immersive visual experience.
-            </p>
-            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <a class="project-link" href="https://malakhessien642-sudo.github.io/beyond-earth/"
-              target="_blank" rel="noopener noreferrer">
-              <span data-en="Visit Website" data-ar="زيارة الموقع">Visit Website</span> ↗
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="education">
-      <div class="section-heading">
-        <p class="eyebrow" data-en="MY LEARNING JOURNEY" data-ar="رحلتي التعليمية">MY LEARNING JOURNEY</p>
-        <h2 data-en="Education & <span>Growth</span>" data-ar="التعليم <span>والتطور</span>">Education & <span>Growth</span></h2>
-      </div>
-      <div class="education-card">
-        <div class="education-icon">🎓</div>
-        <div>
-          <h3 data-en="Computer Science Student" data-ar="طالبة علوم الحاسب">Computer Science Student</h3>
-          <p data-en="Faculty of Science — Computer Science Section"
-            data-ar="كلية العلوم — قسم علوم الحاسب">Faculty of Science — Computer Science Section</p>
-          <p class="muted" data-en="Continuously learning programming, web development, and software engineering fundamentals."
-            data-ar="مستمرة في تعلم البرمجة وتطوير الويب وأساسيات هندسة البرمجيات.">
-            Continuously learning programming, web development, and software engineering fundamentals.
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="WHAT I'M LEARNING" data-ar="ما أتعلمه">WHAT I'M LEARNING</span>
+          <h2 data-en="Technical Skills" data-ar="المهارات التقنية">Technical Skills</h2>
+          <p data-en="Technologies and tools I'm exploring through learning and projects."
+            data-ar="تقنيات وأدوات أتعلمها وأستخدمها في رحلتي ومشاريعي.">
+            Technologies and tools I'm exploring through learning and projects.
           </p>
         </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <div class="skill-icon">⌘</div>
+            <h3>Frontend Development</h3>
+            <p>HTML5 · CSS3 · JavaScript</p>
+            <span class="skill-note">Responsive Web Design</span>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⌘</div>
+            <h3>Backend Development</h3>
+            <p>C# · ASP.NET Core · REST APIs</p>
+            <span class="skill-note">Currently Learning</span>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">▤</div>
+            <h3>Database</h3>
+            <p>SQL · SQL Server</p>
+            <span class="skill-note">Database Fundamentals</span>
+          </article>
+
+          <article class="skill-card ai-card">
+            <div class="skill-icon">✳</div>
+            <h3>AI & Data Science</h3>
+            <p>Python · NumPy · Pandas</p>
+            <span class="skill-note">Data Analysis · ML Fundamentals</span>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">✧</div>
+            <h3>Web Design</h3>
+            <p>UI Design · Responsive Layouts</p>
+            <span class="skill-note">Visual Design</span>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-icon">⌥</div>
+            <h3>Tools & Workflow</h3>
+            <p>Git · GitHub · VS Code</p>
+            <span class="skill-note">Version Control & Practice</span>
+          </article>
+        </div>
+        <p class="skills-disclaimer"
+          data-en="My skills reflect my current learning journey and continue to grow with practice."
+          data-ar="تعكس هذه المهارات رحلتي التعليمية الحالية، وأعمل على تطويرها بالممارسة المستمرة.">
+          My skills reflect my current learning journey and continue to grow with practice.
+        </p>
       </div>
-      <p class="small-note" data-en="Certificates and additional courses can be added here as they are completed."
-        data-ar="ممكن نضيف الشهادات والكورسات هنا كل ما تكمليها.">
-        Certificates and additional courses can be added here as they are completed.
-      </p>
+    </section>
+
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="SOME THINGS I'VE BUILT" data-ar="من أعمالي">SOME THINGS I'VE BUILT</span>
+          <h2 data-en="Featured Projects" data-ar="أبرز المشاريع">Featured Projects</h2>
+          <p data-en="Explore some of my web projects and visit their live websites."
+            data-ar="اكتشفي بعض مشاريعي في تطوير الويب وزوري مواقعها المنشورة.">
+            Explore some of my web projects and visit their live websites.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <a class="project-image-link"
+              href="https://malakhessien642-sudo.github.io/coffee-shop/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Visit Coffee Shop website">
+              <img src="coffee.png" alt="Coffee Shop website homepage"
+                class="project-image" loading="lazy">
+              <span class="image-overlay">View Project ↗</span>
+            </a>
+            <div class="project-content">
+              <span class="project-category">WEBSITE DESIGN</span>
+              <h3>Coffee Shop</h3>
+              <p>A welcoming coffee website with an elegant café-inspired visual experience.</p>
+              <a class="project-link"
+                href="https://malakhessien642-sudo.github.io/coffee-shop/"
+                target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-image-link"
+              href="https://malakhessien642-sudo.github.io/gwaza-mery/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Visit Jawaza Merry website">
+              <img src="merry.png" alt="Jawaza Merry website homepage"
+                class="project-image" loading="lazy">
+              <span class="image-overlay">View Project ↗</span>
+            </a>
+            <div class="project-content">
+              <span class="project-category">ENTERTAINMENT WEBSITE</span>
+              <h3>Jawaza Merry</h3>
+              <p>An Arabic entertainment website inspired by Egyptian wedding humor and everyday life.</p>
+              <a class="project-link"
+                href="https://malakhessien642-sudo.github.io/gwaza-mery/"
+                target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-image-link"
+              href="https://malakhessien642-sudo.github.io/Queen-store-/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Visit Queen Store website">
+              <img src="queen.png" alt="Queen Store website homepage"
+                class="project-image" loading="lazy">
+              <span class="image-overlay">View Project ↗</span>
+            </a>
+            <div class="project-content">
+              <span class="project-category">ONLINE STORE</span>
+              <h3>Queen Store</h3>
+              <p>An online store concept with stylish product presentation and a clear browsing experience.</p>
+              <a class="project-link"
+                href="https://malakhessien642-sudo.github.io/Queen-store-/"
+                target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <a class="project-image-link"
+              href="https://malakhessien642-sudo.github.io/beyond-earth/"
+              target="_blank" rel="noopener noreferrer"
+              aria-label="Visit Beyond Earth website">
+              <img src="earth.png" alt="Beyond Earth website homepage"
+                class="project-image" loading="lazy">
+              <span class="image-overlay">View Project ↗</span>
+            </a>
+            <div class="project-content">
+              <span class="project-category">SPACE EXPLORATION</span>
+              <h3>Beyond Earth</h3>
+              <p>A space-themed web experience inviting visitors to explore planets and the universe.</p>
+              <a class="project-link"
+                href="https://malakhessien642-sudo.github.io/beyond-earth/"
+                target="_blank" rel="noopener noreferrer">Visit Website ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow" data-en="MY LEARNING JOURNEY" data-ar="رحلتي التعليمية">MY LEARNING JOURNEY</span>
+          <h2 data-en="Education & Growth" data-ar="التعليم والتطور">Education & Growth</h2>
+        </div>
+
+        <div class="education-card">
+          <div class="education-icon">✦</div>
+          <div>
+            <h3 data-en="Computer Science Student" data-ar="طالبة علوم الحاسب">Computer Science Student</h3>
+            <p data-en="Faculty of Science — Computer Science Section"
+              data-ar="كلية العلوم — قسم علوم الحاسب">Faculty of Science — Computer Science Section</p>
+            <p data-en="Continuously learning programming, web development, and Artificial Intelligence through courses and practical projects."
+              data-ar="أواصل تعلم البرمجة وتطوير الويب والذكاء الاصطناعي من خلال الدورات والمشاريع العملية.">
+              Continuously learning programming, web development, and Artificial Intelligence through courses and practical projects.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="section contact-section" id="contact">
-      <div class="section-heading">
-        <p class="eyebrow" data-en="LET'S CONNECT" data-ar="خلينا نتواصل">LET'S CONNECT</p>
-        <h2 data-en="Have a project in <span>mind?</span>" data-ar="عندك فكرة <span>لمشروع؟</span>">Have a project in <span>mind?</span></h2>
-        <p class="section-description"
-          data-en="I'm excited to keep learning, collaborate, and explore new opportunities."
-          data-ar="متحمسة أتعلم أكتر، وأتعاون في مشاريع، وأستكشف فرص جديدة.">
-          I'm excited to keep learning, collaborate, and explore new opportunities.
+      <div class="container contact-card">
+        <span class="eyebrow" data-en="LET'S CONNECT" data-ar="لنتواصل">LET'S CONNECT</span>
+        <h2 data-en="Have a project in mind?" data-ar="هل لديك فكرة مشروع؟">Have a project in mind?</h2>
+        <p data-en="I'm excited to keep learning, collaborate, and build meaningful digital experiences."
+          data-ar="أتطلع إلى مواصلة التعلم والتعاون وبناء تجارب رقمية مفيدة.">
+          I'm excited to keep learning, collaborate, and build meaningful digital experiences.
         </p>
-      </div>
-      <div class="contact-card">
-        <div class="contact-icon">✉</div>
-        <div>
-          <h3 data-en="Get in touch" data-ar="تواصلي معايا">Get in touch</h3>
-          <p data-en="You can find me on GitHub or LinkedIn."
-            data-ar="تقدري تلاقيني على GitHub أو LinkedIn.">You can find me on GitHub or LinkedIn.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary"
+            href="https://github.com/malakhessien642-sudo"
+            target="_blank" rel="noopener noreferrer">Visit My GitHub ↗</a>
+          <a class="btn btn-outline"
+            href="https://www.linkedin.com/"
+            target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         </div>
-        <a class="btn btn-primary" href="https://github.com/malakhessien642-sudo"
-          target="_blank" rel="noopener noreferrer"
-          data-en="Visit GitHub ↗" data-ar="زيارة GitHub ↗">Visit GitHub ↗</a>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <a href="#home" class="logo">Malak<span>.</span></a>
-    <p data-en="Designed & built by Malak Hussein"
-      data-ar="تصميم وتطوير ملك حسين">Designed & built by Malak Hussein</p>
-    <p>© <span id="year"></span> Malak Hussein</p>
+    <div class="container footer-content">
+      <a class="logo" href="#home">MALAK<span>.</span></a>
+      <p>Designed & built by Malak Hussein Elsayed Hussein</p>
+      <p>© <span id="currentYear"></span> Malak Hussein Elsayed Hussein</p>
+    </div>
   </footer>
 
-  <button id="backToTop" class="back-to-top" type="button"
-    aria-label="Back to top">↑</button>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
 
-  <script src="script.js"></script>
 </body>
 </html>
